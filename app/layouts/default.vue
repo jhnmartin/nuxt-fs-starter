@@ -2,8 +2,11 @@
 
 <template>
   <div>
-    layout default
-    <slot />
+    <AppHeader />
+    <UMain>
+      <slot />
+    </UMain>
+    <AppFooter />
   </div>
 </template>
 
