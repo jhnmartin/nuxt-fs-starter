@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 definePageMeta({
+  layout: 'dashboard',
   title: 'Resend',
   description: 'Resend'
 });
