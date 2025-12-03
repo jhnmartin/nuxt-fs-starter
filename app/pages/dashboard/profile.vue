@@ -3,7 +3,7 @@ definePageMeta({
   layout: 'dashboard',
   title: 'Profile',
   description: 'Profile'
-})
+});
 </script>
 
 <template>
@@ -11,7 +11,3 @@ definePageMeta({
     <h1>Profile</h1>
   </div>
 </template>
-
-<style>
-
-</style>

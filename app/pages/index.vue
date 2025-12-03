@@ -1,8 +1,10 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('index', () => queryCollection('index').first())
+const { data: page } = await useAsyncData('index', () =>
+  queryCollection('index').first()
+);
 
-const title = page.value?.seo?.title || page.value?.title
-const description = page.value?.seo?.description || page.value?.description
+const title = page.value?.seo?.title || page.value?.title;
+const description = page.value?.seo?.description || page.value?.description;
 
 useSeoMeta({
   titleTemplate: '',
@@ -10,7 +12,7 @@ useSeoMeta({
   ogTitle: title,
   description,
   ogDescription: description
-})
+});
 </script>
 
 <template>
@@ -72,7 +74,10 @@ useSeoMeta({
           :key="index"
           variant="subtle"
           :description="testimonial.quote"
-          :ui="{ description: 'before:content-[open-quote] after:content-[close-quote]' }"
+          :ui="{
+            description:
+              'before:content-[open-quote] after:content-[close-quote]'
+          }"
         >
           <template #footer>
             <UUser

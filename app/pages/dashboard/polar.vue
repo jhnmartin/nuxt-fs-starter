@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'dashboard',
-  title: 'Inbox',
-  description: 'Inbox'
+  title: 'Polar',
+  description: 'Polar'
 });
 </script>
 
 <template>
-  <div>
-    <h1>Inbox</h1>
-  </div>
+  <div />
 </template>

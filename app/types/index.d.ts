@@ -1,6 +1,6 @@
-import type { ParsedContent } from '@nuxt/content'
-import type { Avatar, Badge, Link } from '#ui/types'
-import type { AvatarProps } from '@nuxt/ui'
+import type { ParsedContent } from '@nuxt/content';
+import type { Avatar, Badge, Link } from '#ui/types';
+import type { AvatarProps } from '@nuxt/ui';
 
 export interface BlogPost extends ParsedContent {
   title: string
@@ -15,8 +15,8 @@ export interface BlogPost extends ParsedContent {
   } & Link)[]
 }
 
-export type UserStatus = 'subscribed' | 'unsubscribed' | 'bounced'
-export type SaleStatus = 'paid' | 'failed' | 'refunded'
+export type UserStatus = 'subscribed' | 'unsubscribed' | 'bounced';
+export type SaleStatus = 'paid' | 'failed' | 'refunded';
 
 export interface User {
   id: number
@@ -67,7 +67,7 @@ export interface Notification {
   date: string
 }
 
-export type Period = 'daily' | 'weekly' | 'monthly'
+export type Period = 'daily' | 'weekly' | 'monthly';
 
 export interface Range {
   start: Date

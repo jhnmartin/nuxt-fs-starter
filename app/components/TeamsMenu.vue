@@ -1,52 +1,64 @@
 <script setup lang="ts">
-import type { DropdownMenuItem } from '@nuxt/ui'
+import type { DropdownMenuItem } from '@nuxt/ui';
 
 defineProps<{
   collapsed?: boolean
-}>()
+}>();
 
-const teams = ref([{
-  label: 'Nuxt',
-  avatar: {
-    src: 'https://github.com/nuxt.png',
-    alt: 'Nuxt'
+const teams = ref([
+  {
+    label: 'Nuxt',
+    avatar: {
+      src: 'https://github.com/nuxt.png',
+      alt: 'Nuxt'
+    }
+  },
+  {
+    label: 'NuxtHub',
+    avatar: {
+      src: 'https://github.com/nuxt-hub.png',
+      alt: 'NuxtHub'
+    }
+  },
+  {
+    label: 'NuxtLabs',
+    avatar: {
+      src: 'https://github.com/nuxtlabs.png',
+      alt: 'NuxtLabs'
+    }
   }
-}, {
-  label: 'NuxtHub',
-  avatar: {
-    src: 'https://github.com/nuxt-hub.png',
-    alt: 'NuxtHub'
-  }
-}, {
-  label: 'NuxtLabs',
-  avatar: {
-    src: 'https://github.com/nuxtlabs.png',
-    alt: 'NuxtLabs'
-  }
-}])
-const selectedTeam = ref(teams.value[0])
+]);
+const selectedTeam = ref(teams.value[0]);
 
 const items = computed<DropdownMenuItem[][]>(() => {
-  return [teams.value.map(team => ({
-    ...team,
-    onSelect() {
-      selectedTeam.value = team
-    }
-  })), [{
-    label: 'Create team',
-    icon: 'i-lucide-circle-plus'
-  }, {
-    label: 'Manage teams',
-    icon: 'i-lucide-cog'
-  }]]
-})
+  return [
+    teams.value.map((team) => ({
+      ...team,
+      onSelect() {
+        selectedTeam.value = team;
+      }
+    })),
+    [
+      {
+        label: 'Create team',
+        icon: 'i-lucide-circle-plus'
+      },
+      {
+        label: 'Manage teams',
+        icon: 'i-lucide-cog'
+      }
+    ]
+  ];
+});
 </script>
 
 <template>
   <UDropdownMenu
     :items="items"
     :content="{ align: 'center', collisionPadding: 12 }"
-    :ui="{ content: collapsed ? 'w-40' : 'w-(--reka-dropdown-menu-trigger-width)' }"
+    :ui="{
+      content: collapsed ? 'w-40' : 'w-(--reka-dropdown-menu-trigger-width)'
+    }"
   >
     <UButton
       v-bind="{

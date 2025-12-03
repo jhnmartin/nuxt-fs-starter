@@ -3,7 +3,7 @@ definePageMeta({
   layout: 'dashboard',
   title: 'Dashboard',
   description: 'Dashboard'
-})
+});
 </script>
 
 <template>

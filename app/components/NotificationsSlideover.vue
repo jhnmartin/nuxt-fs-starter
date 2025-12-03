@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { formatTimeAgo } from '@vueuse/core'
-import type { Notification } from '~/types'
+import { formatTimeAgo } from '@vueuse/core';
+import type { Notification } from '~/types';
 
-const { isNotificationsSlideoverOpen } = useDashboard()
+const { isNotificationsSlideoverOpen } = useDashboard();
 
-const { data: notifications } = await useFetch<Notification[]>('/api/notifications')
+const { data: notifications }
+  = await useFetch<Notification[]>('/api/notifications');
 </script>
 
 <template>
@@ -33,7 +34,9 @@ const { data: notifications } = await useFetch<Notification[]>('/api/notificatio
 
         <div class="text-sm flex-1">
           <p class="flex items-center justify-between">
-            <span class="text-highlighted font-medium">{{ notification.sender.name }}</span>
+            <span class="text-highlighted font-medium">{{
+              notification.sender.name
+            }}</span>
 
             <time
               :datetime="notification.date"

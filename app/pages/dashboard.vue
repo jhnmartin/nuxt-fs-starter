@@ -33,32 +33,52 @@ const items = [
 <template>
   <UDashboardPanel id="home">
     <template #header>
-      <UDashboardNavbar :title="pageTitle" :ui="{ right: 'gap-3' }">
+      <UDashboardNavbar
+        :title="pageTitle"
+        :ui="{ right: 'gap-3' }"
+      >
         <template #leading>
           <UDashboardSidebarCollapse />
         </template>
 
         <template #right>
-          <UTooltip text="Notifications" :shortcuts="['N']">
+          <UTooltip
+            text="Notifications"
+            :shortcuts="['N']"
+          >
             <UButton
               color="neutral"
               variant="ghost"
               square
               @click="isNotificationsSlideoverOpen = true"
             >
-              <UChip color="error" inset>
-                <UIcon name="i-lucide-bell" class="size-5 shrink-0" />
+              <UChip
+                color="error"
+                inset
+              >
+                <UIcon
+                  name="i-lucide-bell"
+                  class="size-5 shrink-0"
+                />
               </UChip>
             </UButton>
           </UTooltip>
 
           <UDropdownMenu :items="items">
-            <UButton icon="i-lucide-plus" size="md" class="rounded-full" />
+            <UButton
+              icon="i-lucide-plus"
+              size="md"
+              class="rounded-full"
+            />
           </UDropdownMenu>
         </template>
       </UDashboardNavbar>
       <UDashboardToolbar v-if="toolbarLinks">
-        <UNavigationMenu :items="toolbarLinks" highlight class="flex-1" />
+        <UNavigationMenu
+          :items="toolbarLinks"
+          highlight
+          class="flex-1"
+        />
       </UDashboardToolbar>
     </template>
 
@@ -67,5 +87,3 @@ const items = [
     </template>
   </UDashboardPanel>
 </template>
-
-<style></style>
