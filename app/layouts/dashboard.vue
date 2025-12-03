@@ -7,16 +7,18 @@ const toast = useToast()
 const open = ref(false)
 
 const links = [[{
-  label: 'Home',
-  icon: 'i-lucide-house',
-  to: '/',
+  label: 'Dashboard',
+  icon: 'i-lucide-layout-dashboard',
+  to: '/dashboard',
+  exact: true,
   onSelect: () => {
     open.value = false
-  }
+  },
+  badge: '4'
 }, {
   label: 'Inbox',
   icon: 'i-lucide-inbox',
-  to: '/inbox',
+  to: '/dashboard/inbox',
   badge: '4',
   onSelect: () => {
     open.value = false
@@ -24,38 +26,38 @@ const links = [[{
 }, {
   label: 'Customers',
   icon: 'i-lucide-users',
-  to: '/customers',
+  to: '/dashboard/customers',
   onSelect: () => {
     open.value = false
   }
 }, {
   label: 'Settings',
-  to: '/settings',
+  to: '/dashboard/settings',
   icon: 'i-lucide-settings',
   defaultOpen: true,
   type: 'trigger',
   children: [{
     label: 'General',
-    to: '/settings',
+    to: '/dashboard/settings',
     exact: true,
     onSelect: () => {
       open.value = false
     }
   }, {
     label: 'Members',
-    to: '/settings/members',
+    to: '/dashboard/settings/members',
     onSelect: () => {
       open.value = false
     }
   }, {
     label: 'Notifications',
-    to: '/settings/notifications',
+    to: '/dashboard/settings/notifications',
     onSelect: () => {
       open.value = false
     }
   }, {
     label: 'Security',
-    to: '/settings/security',
+    to: '/dashboard/settings/security',
     onSelect: () => {
       open.value = false
     }

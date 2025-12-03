@@ -1,5 +1,9 @@
-<script lang="ts" setup>
-
+<script setup lang="ts">
+definePageMeta({
+  layout: 'dashboard',
+  title: 'Dashboard',
+  description: 'Dashboard'
+})
 </script>
 
 <template>
@@ -7,7 +11,3 @@
     <h1>Dashboard</h1>
   </div>
 </template>
-
-<style>
-
-</style>

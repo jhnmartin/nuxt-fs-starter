@@ -25,14 +25,16 @@ const items = computed<DropdownMenuItem[][]>(() => ([[{
   avatar: user.value.avatar
 }], [{
   label: 'Profile',
-  icon: 'i-lucide-user'
+  icon: 'i-lucide-user',
+  to: '/dashboard/profile'
 }, {
   label: 'Billing',
-  icon: 'i-lucide-credit-card'
+  icon: 'i-lucide-credit-card',
+  to: '/dashboard/billing'
 }, {
   label: 'Settings',
   icon: 'i-lucide-settings',
-  to: '/settings'
+  to: '/dashboard/settings'
 }], [{
   label: 'Theme',
   icon: 'i-lucide-palette',
@@ -138,7 +140,7 @@ const items = computed<DropdownMenuItem[][]>(() => ([[{
 }], [{
   label: 'Documentation',
   icon: 'i-lucide-book-open',
-  to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
+  to: '/docs',
   target: '_blank'
 }, {
   label: 'GitHub repository',
